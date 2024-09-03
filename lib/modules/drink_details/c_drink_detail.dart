@@ -5,10 +5,9 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class DrinkDetailController extends GetxController {
-  late DrinkDetailModel detailModel;/////here
+  late DrinkDetailModel detailModel; /////here
   late DrinkByIngredientModel data_;
   ValueNotifier<bool> xFetching = ValueNotifier(false);
-  
 
   @override
   void onInit() {
@@ -33,7 +32,7 @@ class DrinkDetailController extends GetxController {
       Iterable iterable = response.body["drinks"] ?? [];
       Map<String, dynamic> rawData = iterable.firstOrNull ?? {};
       detailModel = DrinkDetailModel.fromApi(data: rawData);
+      xFetching.value = false;
     }
-    xFetching.value = false;
   }
 }

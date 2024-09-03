@@ -27,8 +27,13 @@ class DrinkDetailModel extends DrinkByIngredientModel {
       if (strIngredient == null) {
         break;
       } else {
-        IngredientModel ingredientModel_ = IngredientModel.fromApi(data: {"strIngredient1": strIngredient});
-        temp.add(CockTaillDetailModel(ingredientModel: ingredientModel_, measurement: strMeasure));
+        IngredientModel ingredientModel_ =
+            IngredientModel.fromApi(data: {"strIngredient1": strIngredient});
+
+        CockTaillDetailModel mesure = CockTaillDetailModel(
+            ingredientModel: ingredientModel_, measurement: strMeasure);
+
+        temp.add(mesure);
       }
     }
 

@@ -57,9 +57,12 @@ class DrinkByIngredient extends StatelessWidget {
                             child: Column(
                               children: [
                                 Expanded(
-                                  child: Image.network(
-                                    each.drinkImage,
-                                    fit: BoxFit.fill,
+                                  child: Hero(
+                                    tag: each.drinkImage,
+                                    child: Image.network(
+                                      each.drinkImage,
+                                      fit: BoxFit.fill,
+                                    ),
                                   ),
                                 ),
                                 SizedBox(
